@@ -19,8 +19,6 @@ While the script currently has basic features, the goal is to expand its capabil
 
 - **Automatic Backup with Cron:** Automate backups using scheduled cron tasks.
 
-- **Logging:** Add logging features to track script operations.
-
 - **Archive Compression:** Improve efficiency by adding options for compressing archives.
 
 - **Notifications:** Integrate notifications to inform users about backup status.
