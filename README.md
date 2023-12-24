@@ -11,6 +11,8 @@ This project is a simple Bash script designed to facilitate backup, listing, and
 
 3. **Restoration:** The restoration function allows you to restore a previously made backup.
 
+4. **Logging:** Add logging features to track script operations.
+
 ## Features to Add
 
 While the script currently has basic features, the goal is to expand its capabilities. Here are some features to be added in the future:
