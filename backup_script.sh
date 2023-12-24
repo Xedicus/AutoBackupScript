@@ -1,6 +1,20 @@
 
 #!/bin/sh
 
+#Log File
+
+log_file="backup_log.txt"
+
+#Fonction to log file
+
+log_message(){
+
+local timestamp
+
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+echo "[$timestamp] $1" >> "log_file"
+}
 cat <<"EOF"
 
                                                                      
@@ -55,8 +69,15 @@ case $number in
  create_backup(){
  timestamp=$(date +"%Y%m%d%H%M%S")
  backup_name="backup_$timestamp"
+
+# Backup logging
+log_message "Creating backup: $backup_name"
+
  tar -cvf "$backup_dir/$backup_name.tar" $files
  echo "Backup created with success: $backup_name"
+
+# logging for successful backup
+log_message "Backup created successfully: $backup_name"
  }
  
  
@@ -73,6 +94,9 @@ case $number in
  read -r restore_name
  tar -xvf "$backup_dir/$restore_name"
  echo "Backup restored with success:$restore_name"
+# Logging for sucessful restore
+log_message "Backup restored successfully: $restore_name"
+
  }
  
  #######       Main
